@@ -7,9 +7,6 @@
 
 import Foundation
 
-// Singleton Design Pattern
-// final - inheritance nahi hoga theek hai final ho gya
-
 enum DataError: Error {
     case invalidResponse
     case invalidURL
@@ -17,9 +14,6 @@ enum DataError: Error {
     case network(Error?)
     case decoding(Error?)
 }
-// Like to banta hai bhaio
-// Please like the video - Please, request, mentioned not - daya 😂
-// typealias Handler = (Result<[Product], DataError>) -> Void
 
 typealias ResultHandler<T> = (Result<T, DataError>) -> Void
 
@@ -41,7 +35,7 @@ final class APIManager {
         completion: @escaping ResultHandler<T>
     ) {
         guard let url = type.url else {
-            completion(.failure(.invalidURL)) // I forgot to mention this in the video
+            completion(.failure(.invalidURL))
             return
         }
 
@@ -83,9 +77,6 @@ final class APIManager {
     }
 
 }
-
-
-// Like banta hai guys
 
 class NetworkHandler {
 

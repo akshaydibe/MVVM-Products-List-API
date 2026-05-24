@@ -14,9 +14,22 @@
 		5D4F7C592FC3095F003A5604 /* ProductCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5D3CF8B22FC31133008FCD29 /* Exceptions for "ProductCatalog" folder in "ProductCatalog" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5D4F7C582FC3095F003A5604 /* ProductCatalog */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5D4F7C5B2FC3095F003A5604 /* ProductCatalog */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5D3CF8B22FC31133008FCD29 /* Exceptions for "ProductCatalog" folder in "ProductCatalog" target */,
+			);
 			path = ProductCatalog;
 			sourceTree = "<group>";
 		};
@@ -60,6 +73,7 @@
 				5D4F7C552FC3095F003A5604 /* Sources */,
 				5D4F7C562FC3095F003A5604 /* Frameworks */,
 				5D4F7C572FC3095F003A5604 /* Resources */,
+				7E8A9B0C1D2E3F4A5B6C7D8E /* Ensure Bundle Identifier */,
 			);
 			buildRules = (
 			);
@@ -122,6 +136,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E8A9B0C1D2E3F4A5B6C7D8E /* Ensure Bundle Identifier */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Ensure Bundle Identifier";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nPLIST=\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleIdentifier $PRODUCT_BUNDLE_IDENTIFIER\" \"$PLIST\" || /usr/libexec/PlistBuddy -c \"Add :CFBundleIdentifier string $PRODUCT_BUNDLE_IDENTIFIER\" \"$PLIST\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D4F7C552FC3095F003A5604 /* Sources */ = {
@@ -262,8 +297,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = ProductCatalog/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -274,6 +308,31 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = ProductCatalog/Info.plist;
+				INFOPLIST_KEY_CFBundleDevelopmentRegion = "$(DEVELOPMENT_LANGUAGE)";
+				"INFOPLIST_KEY_CFBundleDevelopmentRegion[sdk=iphoneos*]" = "$(DEVELOPMENT_LANGUAGE)";
+				"INFOPLIST_KEY_CFBundleDevelopmentRegion[sdk=iphonesimulator*]" = "$(DEVELOPMENT_LANGUAGE)";
+				INFOPLIST_KEY_CFBundleExecutable = "$(EXECUTABLE_NAME)";
+				"INFOPLIST_KEY_CFBundleExecutable[sdk=iphoneos*]" = "$(EXECUTABLE_NAME)";
+				"INFOPLIST_KEY_CFBundleExecutable[sdk=iphonesimulator*]" = "$(EXECUTABLE_NAME)";
+				INFOPLIST_KEY_CFBundleIdentifier = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				"INFOPLIST_KEY_CFBundleIdentifier[sdk=iphoneos*]" = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				"INFOPLIST_KEY_CFBundleIdentifier[sdk=iphonesimulator*]" = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				INFOPLIST_KEY_CFBundleInfoDictionaryVersion = "6.0";
+				"INFOPLIST_KEY_CFBundleInfoDictionaryVersion[sdk=iphoneos*]" = "6.0";
+				"INFOPLIST_KEY_CFBundleInfoDictionaryVersion[sdk=iphonesimulator*]" = "6.0";
+				INFOPLIST_KEY_CFBundleName = "$(PRODUCT_NAME)";
+				"INFOPLIST_KEY_CFBundleName[sdk=iphoneos*]" = "$(PRODUCT_NAME)";
+				"INFOPLIST_KEY_CFBundleName[sdk=iphonesimulator*]" = "$(PRODUCT_NAME)";
+				INFOPLIST_KEY_CFBundlePackageType = APPL;
+				"INFOPLIST_KEY_CFBundlePackageType[sdk=iphoneos*]" = APPL;
+				"INFOPLIST_KEY_CFBundlePackageType[sdk=iphonesimulator*]" = APPL;
+				INFOPLIST_KEY_CFBundleShortVersionString = "$(MARKETING_VERSION)";
+				"INFOPLIST_KEY_CFBundleShortVersionString[sdk=iphoneos*]" = "$(MARKETING_VERSION)";
+				"INFOPLIST_KEY_CFBundleShortVersionString[sdk=iphonesimulator*]" = "$(MARKETING_VERSION)";
+				INFOPLIST_KEY_CFBundleVersion = "$(CURRENT_PROJECT_VERSION)";
+				"INFOPLIST_KEY_CFBundleVersion[sdk=iphoneos*]" = "$(CURRENT_PROJECT_VERSION)";
+				"INFOPLIST_KEY_CFBundleVersion[sdk=iphonesimulator*]" = "$(CURRENT_PROJECT_VERSION)";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -307,8 +366,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = ProductCatalog/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -319,6 +377,31 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = ProductCatalog/Info.plist;
+				INFOPLIST_KEY_CFBundleDevelopmentRegion = "$(DEVELOPMENT_LANGUAGE)";
+				"INFOPLIST_KEY_CFBundleDevelopmentRegion[sdk=iphoneos*]" = "$(DEVELOPMENT_LANGUAGE)";
+				"INFOPLIST_KEY_CFBundleDevelopmentRegion[sdk=iphonesimulator*]" = "$(DEVELOPMENT_LANGUAGE)";
+				INFOPLIST_KEY_CFBundleExecutable = "$(EXECUTABLE_NAME)";
+				"INFOPLIST_KEY_CFBundleExecutable[sdk=iphoneos*]" = "$(EXECUTABLE_NAME)";
+				"INFOPLIST_KEY_CFBundleExecutable[sdk=iphonesimulator*]" = "$(EXECUTABLE_NAME)";
+				INFOPLIST_KEY_CFBundleIdentifier = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				"INFOPLIST_KEY_CFBundleIdentifier[sdk=iphoneos*]" = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				"INFOPLIST_KEY_CFBundleIdentifier[sdk=iphonesimulator*]" = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				INFOPLIST_KEY_CFBundleInfoDictionaryVersion = "6.0";
+				"INFOPLIST_KEY_CFBundleInfoDictionaryVersion[sdk=iphoneos*]" = "6.0";
+				"INFOPLIST_KEY_CFBundleInfoDictionaryVersion[sdk=iphonesimulator*]" = "6.0";
+				INFOPLIST_KEY_CFBundleName = "$(PRODUCT_NAME)";
+				"INFOPLIST_KEY_CFBundleName[sdk=iphoneos*]" = "$(PRODUCT_NAME)";
+				"INFOPLIST_KEY_CFBundleName[sdk=iphonesimulator*]" = "$(PRODUCT_NAME)";
+				INFOPLIST_KEY_CFBundlePackageType = APPL;
+				"INFOPLIST_KEY_CFBundlePackageType[sdk=iphoneos*]" = APPL;
+				"INFOPLIST_KEY_CFBundlePackageType[sdk=iphonesimulator*]" = APPL;
+				INFOPLIST_KEY_CFBundleShortVersionString = "$(MARKETING_VERSION)";
+				"INFOPLIST_KEY_CFBundleShortVersionString[sdk=iphoneos*]" = "$(MARKETING_VERSION)";
+				"INFOPLIST_KEY_CFBundleShortVersionString[sdk=iphonesimulator*]" = "$(MARKETING_VERSION)";
+				INFOPLIST_KEY_CFBundleVersion = "$(CURRENT_PROJECT_VERSION)";
+				"INFOPLIST_KEY_CFBundleVersion[sdk=iphoneos*]" = "$(CURRENT_PROJECT_VERSION)";
+				"INFOPLIST_KEY_CFBundleVersion[sdk=iphonesimulator*]" = "$(CURRENT_PROJECT_VERSION)";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
